@@ -1,13 +1,15 @@
-import Jumbotron from './components/Jumbotron/Jumbotron'
-import dataTxt from './data_txt/homepage.json'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/home'
 import './App.scss'
 
 const App = () => {
   return (
     <div className="root">
-      {dataTxt.map((item, index) => (
-        <Jumbotron key={index} {...item} />
-      ))}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="about" element={<About />} /> */}
+      </Routes>
     </div>
   )
 }
