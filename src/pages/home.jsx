@@ -1,13 +1,15 @@
 import React from 'react'
+import { Accordion } from '../components'
 import { Jumbotron, Footer } from '../containers'
-import dataTxt from '../data_txt/homepage.json'
+import text from '../data_txt/homepage.json'
 
 const home = () => {
   return (
     <div>
-      {dataTxt.map((item, index) => (
-        <Jumbotron key={index} {...item} />
+      {text.map((item) => (
+        <Jumbotron key={item.id} {...item} />
       ))}
+      <Accordion />
       <Footer />
     </div>
   )

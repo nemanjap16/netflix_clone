@@ -4,3 +4,12 @@
   color: #333;
   font-size: 16px;
 }
+
+.section__accordion {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  padding: 70px 45px;
+  border-bottom: 8px solid #222;
+  overflow: hidden;
+}
