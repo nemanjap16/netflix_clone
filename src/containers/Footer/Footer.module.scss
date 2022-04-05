@@ -16,8 +16,10 @@
   color: #757575;
   font-size: 18px;
 
-  &:hover {
-    color: #ccc;
+  span {
+    &:hover {
+      color: #ccc;
+    }
   }
 }
 
@@ -27,8 +29,10 @@
   color: #757575;
   font-size: 18px;
 
-  &:hover {
-    color: #ccc;
+  span {
+    &:hover {
+      color: #ccc;
+    }
   }
 }
 
@@ -43,7 +47,7 @@
 }
 
 .link {
-  padding: 10px 0;
+  padding: 6px 0;
 
   @media (max-width: 1000px) {
     padding: 8px 0;

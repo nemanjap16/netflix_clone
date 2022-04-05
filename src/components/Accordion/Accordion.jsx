@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Wrapper } from '../../hoc'
+import Form from '../Form/Form.jsx'
 import { MdClose, MdAdd } from 'react-icons/md'
 import faq from '../../data_txt/faq.json'
 import styles from './Accordion.module.scss'
@@ -41,6 +42,7 @@ const Accordion = () => {
           </div>
         ))}
       </div>
+      <Form />
     </div>
   )
 }

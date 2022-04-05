@@ -69,7 +69,9 @@ const Footer = () => {
           </span>
         </div>
       </div>
-      <div className={styles.subtitle}>Netflix Global</div>
+      <div className={styles.subtitle}>
+        <span>Netflix Global</span>
+      </div>
     </footer>
   )
 }
