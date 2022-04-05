@@ -1,7 +1,7 @@
 import React from 'react'
-import { Accordion } from '../components'
-import { Jumbotron, Footer } from '../containers'
-import text from '../data_txt/homepage.json'
+import { Accordion } from '../../components'
+import { Jumbotron, Footer } from '../../containers'
+import text from '../../data_txt/homepage.json'
 
 const home = () => {
   return (
