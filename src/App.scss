@@ -14,3 +14,24 @@
   border-bottom: 8px solid #222;
   overflow: hidden;
 }
+
+.row {
+  flex-direction: row;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

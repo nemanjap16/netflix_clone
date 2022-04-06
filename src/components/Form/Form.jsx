@@ -16,7 +16,7 @@ const Form = () => {
       </button>
 
       <p className={styles.text}>
-        Ready to watch? Enter email to create your membership.
+        Ready to watch? Enter your email to create or restart your membership.
       </p>
     </div>
   )
