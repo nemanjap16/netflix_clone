@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom'
 import {
   db,
   auth,
+  getDocs,
+  collection,
+  updateProfile,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from './firebase/firebase'
@@ -16,6 +20,10 @@ ReactDOM.render(
       value={{
         db,
         auth,
+        getDocs,
+        collection,
+        updateProfile,
+        onAuthStateChanged,
         signInWithEmailAndPassword,
         createUserWithEmailAndPassword,
       }}

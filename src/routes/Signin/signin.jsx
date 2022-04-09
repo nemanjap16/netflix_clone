@@ -59,10 +59,10 @@ const Signin = () => {
               className={styles.button}
               type="submit"
             >
-              Submit
+              Sign In
             </button>
             <p className={styles.text}>
-              New to Netflix? <Link to={ROUTES.SIGNUP}>Sign up now</Link>
+              New to Netflix? <Link to={ROUTES.SIGNUP}>Sign up now.</Link>
             </p>
             <p className={styles.textSmall}>
               This is protected by Google reCAPCHA, to ensure your are not a
