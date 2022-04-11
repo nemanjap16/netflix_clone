@@ -9,7 +9,7 @@ import './App.scss'
 
 const App = () => {
   const { user } = useAuth()
-  console.log('user', user)
+  // console.log('user', user)
   return (
     <div className="root">
       <BrowserRouter>

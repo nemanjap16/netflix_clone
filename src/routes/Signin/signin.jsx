@@ -16,7 +16,6 @@ const Signin = () => {
 
   const handleSignin = (e) => {
     e.preventDefault()
-    console.log(auth)
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         // redirect to browse page

@@ -77,7 +77,7 @@ const Signup = () => {
               Sign Up
             </button>
             <p className={styles.text}>
-              Alredy a user? <Link to={ROUTES.SIGNIN}>Sign in now.</Link>
+              Already a user? <Link to={ROUTES.SIGNIN}>Sign in now.</Link>
             </p>
             <p className={styles.textSmall}>
               This is protected by Google reCAPCHA, to ensure your are not a

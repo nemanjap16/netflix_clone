@@ -2,6 +2,7 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore, getDocs, collection } from 'firebase/firestore'
 import {
   getAuth,
+  signOut,
   updateProfile,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -23,22 +24,15 @@ initializeApp(firebaseConfig)
 // Get a reference to the database service
 const db = getFirestore()
 
-// Get auth and user
+// Get auth
 const auth = getAuth()
-
-// collection reference
-// const movies = collection(db, 'films')
-
-// document reference
-// getDocs(movies).then((snapshot) => {
-//   snapshot.docs.map((doc) => console.log(doc.data()))
-// })
 
 // Export the database for components to use.
 export {
   db,
   auth,
   getDocs,
+  signOut,
   collection,
   updateProfile,
   onAuthStateChanged,
