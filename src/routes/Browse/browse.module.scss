@@ -41,8 +41,15 @@
     font-size: 18px;
     font-weight: 500;
 
-    p {
+    button {
       display: inline-flex;
+      appearance: none;
+      background-color: inherit;
+      outline: none;
+      border: 0;
+      color: #fff;
+      font-size: 18px;
+
       &:hover {
         color: #e50914;
         cursor: pointer;
@@ -67,24 +74,60 @@
   }
 
   img {
-    width: 28px;
+    width: 30px;
     height: auto;
 
     @media (max-width: 800px) {
       display: none;
     }
   }
-
-  // &:hover {
-  //   .signout {
-  //     display: block;
-  //   }
-  // }
 }
 
-.icon {
+.searchInput {
+  width: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 50px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    height: 30px;
+    background-color: #44444459;
+    color: #fff;
+
+    &:focus {
+      width: 200px;
+      padding: 0 6px;
+      border: 1px solid #fff;
+      transition: width 0.5s ease-in-out;
+    }
+
+    &::placeholder {
+      opacity: 0;
+    }
+
+    &:focus::placeholder {
+      opacity: 1;
+    }
+  }
+}
+
+.iconSearch {
+  position: absolute;
+  right: 0;
+  margin-right: 6px;
+  color: #fff;
+  height: 14px;
+  width: auto;
+}
+
+.iconPowerOff {
   width: 20px;
   height: auto;
+  color: #e50914;
   cursor: pointer;
 }
 
@@ -132,6 +175,32 @@
   }
 }
 
+.playBtn {
+  margin-top: 20px;
+  padding: 10px 26px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ebebebeb;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color ease 0.5s;
+  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
+
+  &:hover {
+    background-color: #ff1e1e;
+    color: #fff;
+  }
+}
+
 .active {
   display: none;
+}
+
+.loading {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-content: center;
 }
