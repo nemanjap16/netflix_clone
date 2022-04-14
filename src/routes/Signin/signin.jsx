@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import * as ROUTES from '../../constants/paths'
 import { firebaseContext } from '../../context/firebaseContext'
 import { Navigation } from '../../components'
-import { Footer } from '../../containers'
+
 import styles from './signin.module.scss'
 
 const Signin = () => {
@@ -70,7 +70,6 @@ const Signin = () => {
           </form>
         </div>
       </Navigation>
-      <Footer />
     </>
   )
 }

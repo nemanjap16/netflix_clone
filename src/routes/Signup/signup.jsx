@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import * as ROUTES from '../../constants/paths'
 import { firebaseContext } from '../../context/firebaseContext'
 import { Navigation } from '../../components'
-import { Footer } from '../../containers'
 import styles from './signup.module.scss'
 import { updateProfile } from 'firebase/auth'
 
@@ -86,7 +85,6 @@ const Signup = () => {
           </form>
         </div>
       </Navigation>
-      <Footer />
     </div>
   )
 }

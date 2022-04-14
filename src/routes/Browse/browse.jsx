@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import Fuse from 'fuse.js'
 import { firebaseContext } from '../../context/firebaseContext'
 import * as ROUTES from '../../constants/paths'
 import { BrowseContainer } from '../../containers'
@@ -15,10 +16,33 @@ const Browse = () => {
   const [inputValue, setInputValue] = useState('')
   const navigate = useNavigate()
 
-  let [searchTerm, setSearchTerm] = useState('Films')
-  const { films } = useContent(searchTerm)
-  const { series } = useContent(searchTerm)
-  const slides = selectionFilter({ series, films })
+  const [active, setActive] = useState('films')
+  const [searchTerm, setSearchTerm] = useState('films')
+  const content = useContent(searchTerm)
+  let showData = active
+  let { [showData]: data } = content
+  const slides = selectionFilter(searchTerm)
+  // console.log(data)
+
+  useEffect(() => {
+    const fuse = new Fuse(data, {
+      keys: ['title', 'genre', 'description'],
+    })
+    const result = fuse.search(inputValue)
+
+    if (inputValue.length > 3 && result.length > 0) {
+      data = result
+      console.log(result)
+    }
+  }, [inputValue])
+
+  useEffect(() => {
+    if (active === 'films') {
+      setSearchTerm('films')
+    } else {
+      setSearchTerm('series')
+    }
+  }, [searchTerm, active])
 
   const handleSignout = () => {
     localStorage.removeItem('authUser')
@@ -61,16 +85,21 @@ const Browse = () => {
               <div className={styles.links}>
                 <span>
                   <button
-                    onClick={() => setSearchTerm('Series')}
-                    onKeyDown={() => setSearchTerm('Series')}
+                    onClick={() => [
+                      setSearchTerm('series'),
+                      setActive('series'),
+                    ]}
+                    onKeyDown={() => setSearchTerm('series')}
+                    style={active === 'series' ? { color: '#e50914' } : {}}
                   >
                     Series
                   </button>
                 </span>
                 <span>
                   <button
-                    onClick={() => setSearchTerm('Films')}
-                    onKeyDown={() => setSearchTerm('Films')}
+                    onClick={() => [setSearchTerm('films'), setActive('films')]}
+                    onKeyDown={() => setSearchTerm('films')}
+                    style={active === 'films' ? { color: '#e50914' } : {}}
                   >
                     Films
                   </button>
@@ -124,7 +153,11 @@ const Browse = () => {
             </div>
             <button className={styles.playBtn}>Play</button>
           </div>
-          <BrowseContainer slides={slides} />
+          <BrowseContainer
+            content={data}
+            slides={slides}
+            searchTerm={searchTerm}
+          />
         </div>
       ) : (
         <div>{Loader()}</div>

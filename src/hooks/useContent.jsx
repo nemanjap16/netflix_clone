@@ -12,7 +12,7 @@ const useContent = (target) => {
     return () => {
       setContent([])
     }
-  }, [])
+  }, [target])
   return { [target]: content }
 }
 

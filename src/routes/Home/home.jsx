@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header } from '../../containers/'
 import { Accordion } from '../../components'
-import { Jumbotron, Footer } from '../../containers'
+import { Jumbotron } from '../../containers'
 import text from '../../data_txt/homepage.json'
 
 const home = () => {
@@ -12,7 +12,6 @@ const home = () => {
         <Jumbotron key={item.id} {...item} />
       ))}
       <Accordion />
-      <Footer />
     </div>
   )
 }
